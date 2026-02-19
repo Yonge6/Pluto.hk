@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluto.hk | Pluto Vista Landing</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7317cf",
+                        "accent-gold": "#d4af37",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0a070d",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glow-text-gold {
+                color: #d4af37;
+                text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            }
+            .glow-text-purple {
+                color: #b16eff;
+                text-shadow: 0 0 15px rgba(115, 23, 207, 0.5);
+            }
+            .glass-card {
+                background: rgba(43, 30, 56, 0.3);
+                backdrop-filter: blur(16px);
+                border: 1px solid rgba(115, 23, 207, 0.15);
+            }
+            .pluto-vista-overlay {
+                background: linear-gradient(to bottom, 
+                    rgba(10, 7, 13, 0.7) 0%, 
+                    rgba(10, 7, 13, 0.4) 30%, 
+                    rgba(10, 7, 13, 0.4) 70%, 
+                    rgba(10, 7, 13, 0.9) 100%);
+            }
+            .atmospheric-glow {
+                background: radial-gradient(circle at 50% 100%, rgba(115, 23, 207, 0.15) 0%, transparent 70%);
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="bg-background-dark font-display text-slate-100 antialiased selection:bg-primary/30">
+    <div id="root"></div>
+</body>
+</html>
