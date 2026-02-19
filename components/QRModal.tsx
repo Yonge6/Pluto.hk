@@ -13,36 +13,48 @@ const QRModal: React.FC<QRModalProps> = ({ onClose }) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="glass-card max-w-sm w-full p-10 rounded-3xl relative animate-in zoom-in duration-300 border-primary/30 shadow-[0_0_50px_rgba(115,23,207,0.2)]">
+      <div className="glass-card max-w-md w-full p-12 rounded-3xl relative animate-in zoom-in duration-300 border-primary/30 shadow-[0_0_60px_rgba(115,23,207,0.3)]">
         <button 
-          className="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors bg-white/5 p-1 rounded-full" 
+          className="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors bg-white/5 p-2 rounded-full" 
           onClick={onClose}
         >
-          <span className="material-symbols-outlined">close</span>
+          <span className="material-symbols-outlined text-xl">close</span>
         </button>
         
-        <div className="text-center space-y-8">
-          <div className="space-y-2">
-            <h3 className="text-2xl font-bold tracking-tight">开启觉醒实验</h3>
-            <p className="text-sm text-slate-400 font-light tracking-widest uppercase">Start the Experiment</p>
+        <div className="text-center space-y-10 py-4">
+          <div className="relative inline-block">
+            <div className="absolute inset-0 bg-primary/30 blur-3xl rounded-full animate-pulse"></div>
+            <span className="material-symbols-outlined text-7xl text-primary relative z-10" style={{ fontVariationSettings: "'FILL' 0, 'wght' 200" }}>
+              hourglass_empty
+            </span>
           </div>
           
-          <div className="relative group">
-            <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full group-hover:bg-primary/40 transition-all"></div>
-            <div className="bg-white p-5 rounded-2xl relative z-10 inline-block shadow-2xl overflow-hidden">
-              {/* 这里使用了您提供的二维码类似的清晰版本 */}
-              <img 
-                alt="Pluto Awakening QR Code" 
-                className="w-56 h-56 md:w-64 md:h-64 object-contain" 
-                src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://pluto.hk&margin=10&format=png"
-              />
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h3 className="text-4xl font-bold tracking-[0.2em] glow-text-purple">敬请期待</h3>
+              <p className="text-2xl font-light tracking-[0.1em] text-slate-300">COMING SOON</p>
+            </div>
+            
+            <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto"></div>
+            
+            <div className="space-y-3">
+              <p className="text-slate-400 font-light leading-relaxed">
+                冥王星登陆计划正在紧张筹备中，<br/>
+                感谢您的关注与耐心。
+              </p>
+              <p className="text-xs text-slate-500 italic uppercase tracking-wider">
+                The Pluto landing mission is currently in preparation. <br/>
+                Thank you for your patience and interest.
+              </p>
             </div>
           </div>
           
-          <div className="space-y-2">
-            <p className="text-base text-slate-200 font-medium">扫描二维码，登陆冥王星</p>
-            <p className="text-xs text-slate-500 italic">Scan to land on Pluto and begin your journey.</p>
-          </div>
+          <button 
+            onClick={onClose}
+            className="w-full py-4 rounded-xl border border-primary/20 hover:bg-primary/10 transition-all text-sm font-bold tracking-widest text-primary uppercase"
+          >
+            返回 | Return
+          </button>
         </div>
       </div>
     </div>
